@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+    padding: 70px 20px 70px 20px;
+    border: solid black 1px;
+    background-color: #FAF9F6;
+}
+@media screen and (min-width: 768px) {
+    main {
+        padding: 30px 20px 70px 240px;
+    }
+}
+
+.nav-svg > svg > path {
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-1-ul > .nav-li > ul {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-top: 3rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 4px;
+        border-width: 1px;
+}
+#bar-svg {
+    transform-origin: left center;
+}
