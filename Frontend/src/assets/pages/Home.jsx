@@ -9,7 +9,7 @@ import BarState from '../components/statistique/BarState.jsx';
 import LineState from '../components/statistique/LineState.jsx';
 import { thumbnail } from '../index.jsx';
 
-const Home = ({ dateSaved }) => {
+const Home = () => {
 
 
   const TitleComponent = ({ title }) => (

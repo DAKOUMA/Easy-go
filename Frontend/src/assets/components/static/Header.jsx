@@ -3,12 +3,23 @@ import { generalList, horizontalList, mainList } from './Navigation/NavListData'
 import NavList from './Navigation/NavBar'
 import { logo, notify, photo } from '../..'
 import BarSvg from '../../icon/BarSvg'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useMotionValue, useMotionValueEvent, useScroll } from 'framer-motion'
 
 const Header = () => {
     const [listID, setListID] = useState('')
     const [openToggle, setOpenToggle] = useState(false)
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    const { scrollY } = useScroll()
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        setIsScrolled(latest > 0);
+    })
+
+    const variantHeader = {
+        initial: { y: 10 },
+        animate: { y: 0 }
+    }
 
     const handleListID = (param) => {
         if (param === listID) {
@@ -33,7 +44,7 @@ const Header = () => {
 
     return (
         <>
-            <div className='fixed py-3 px-3 md:hidden'> <BarSvg openToggle={openToggle} setOpenToggle={setOpenToggle} /> </div>
+            <div className='fixed py-3 px-3 md:hidden z-50'> <BarSvg openToggle={openToggle} setOpenToggle={setOpenToggle} /> </div>
             <AnimatePresence>
                 {openToggle ?
                     <motion.div
@@ -82,8 +93,13 @@ const Header = () => {
                         </div>
                     </motion.div> : ''}
             </AnimatePresence>
-            <div className='navbar-horizontal fixed py-3 px-3 right-0 z-50 '>
-                <div className='horizontal-list flex items-center gap-20'>
+            <div className={`navbar-horizontal w-full flex justify-end fixed py-3 px-3 right-0 z-10 ${isScrolled ? ' shadow-md bg-white' : ''} transition-all`}>
+                <motion.div
+                    className='horizontal-list flex items-center gap-20'
+                    variants={variantHeader}
+                    initial={isScrolled ? 'initial' : 'animate'}
+                    animate={isScrolled ? 'animate' : 'initial'}
+                >
                     <ul className='hidden xl:flex gap-12 relative navbar-1-ul'>
                         {
                             horizontalList.map((value, index) => (
@@ -103,7 +119,7 @@ const Header = () => {
                         <li><img src={notify} alt="" /></li>
                         <li><img src={photo} alt="" /></li>
                     </ul>
-                </div>
+                </motion.div>
             </div>
         </>
     )

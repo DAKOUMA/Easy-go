@@ -45,7 +45,6 @@ const Product = () => {
         </div>
       </article>
       <article className='mt-10'>
-     
         <div className='grid grid-cols-2 gap-y-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
           {union ?
             union.sort((a, b) => b.count - a.count).map((value, index) => {
