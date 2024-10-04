@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json()); // allow us to accept JSON data in the rea.body
-app.get("/", (req, res) => res.status(200).json({ message: "hello world" }))
+app.get("/", (req, res) => res.status(200).send("HELLO WORLD"))
 
 app.use("/api/products", productRoutes)
 
