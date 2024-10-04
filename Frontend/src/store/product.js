@@ -42,7 +42,7 @@ export const useProductStore = create((set) => ({
     },
     setProducts: (products) => set({ products }),
     getProduct: () => {
-        axios.get("http://localhost:5000/api/products")
+        axios.get("https://web-interface-black.vercel.app/api/products")
             .then(response => {
                 const result = response.data.data;
                 set({ products: result })
@@ -56,7 +56,7 @@ export const useProductStore = create((set) => ({
             return { success: false, message: "Fill all in fields" }
         }
 
-        await axios.post("http://localhost:5000/api/products", newProduct)
+        await axios.post("https://web-interface-black.vercel.app/api/products", newProduct)
             .then(response => {
                 set((state) => ({ products: [...state.products, response.data.data] }))
                 return { success: true, message: "Product created successfully" }
@@ -70,7 +70,7 @@ export const useProductStore = create((set) => ({
     //     if (!id) {
     //         return { success: false, message: "No ID error" }
     //     }
-    //     axios.delete(`http://localhost:5000/api/products/${id}`)
+    //     axios.delete(`https://web-interface-black.vercel.app/api/products/${id}`)
     //         .then(response => {
     //             return { sucess: true, message: "productDeleted" }
     //         })
