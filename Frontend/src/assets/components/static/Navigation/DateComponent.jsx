@@ -11,7 +11,6 @@ const DateComponent = () => {
   const MAX_DATE = new Date(2024, 8, 28);
 
   useEffect(() => {
-    console.log(date);
     const stringDate = dayjs(date).format("YYYY-MM-DD")
     setDateSaved(stringDate)
   }, [date])

@@ -13,8 +13,8 @@ const PORT = process.env.PORT || 5000
 
 app.use(cors(
     {
-        origin: ["https://easy-2y7kluxli-dakoumas-projects.vercel.app/"],
-        methods: ["POST", "GET"],
+        origin: ["https://easy-go-iota.vercel.app"],
+        methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"],
         credentials: true
     }
 ))
