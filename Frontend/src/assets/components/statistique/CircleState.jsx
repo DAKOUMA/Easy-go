@@ -6,7 +6,7 @@ import { PieChart } from '@mui/x-charts'
 const CircleState = () => {
     const [pieData, setPieData] = useState('')
 
-    const { products, filterProductByDate, dateSaved, productByDate, date } = useProductStore()
+    const { products, filterProductByDate, dateSaved, productByDate } = useProductStore()
 
 
     // function to return an Object where brand as sorter by top Three, and other is in Other
@@ -23,15 +23,15 @@ const CircleState = () => {
                 acc += item.count
                 return acc
             }, 0)
-    
+
             const dataPie = productByDate.map(({ brand, count }, index) => ({ label: brand, value: count, id: index }))
-    
+
             setPieData({ total: productCount, data: dataPie })
         }
     }, [productByDate])
 
     return (
-        <div className='h-[300px] w-auto flex mx-auto ' onClick={() => console.log(dateSaved)}>
+        <div className='h-[300px] w-auto flex mx-auto '>
             {pieData ?
                 // <PieChart
                 //     lineWidth={20}

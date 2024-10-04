@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdArrowOutward } from "react-icons/md";
 
-const HomeArrow = ({ title, svg, dataSpec }) => {
+const HomeArrow = ({ title, svg }) => {
     const Svg = svg
     return (
         <div className='text-black mx-auto w-full px-3 py-2 rounded-md flex flex-col gap-3 bg-white shadow-lg'>

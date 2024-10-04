@@ -20,22 +20,14 @@ const BarState = () => {
                 return acc;
             }, [])
 
-            console.log("bill", calculateBill)
-
             const object = Object.entries(calculateDate).map(([date, count]) => ({ date, count }))
             const sortedData = object.sort((a, b) => new Date(a.date) - new Date(b.date));
 
             const dates = sortedData.map(item => item.date);
             const counts = sortedData.map(item => item.count);
-
-            console.log(sortedData);
-
             setDayState({ dates, counts })
         }
     }, [products])
-
-    console.log(dayState);
-
 
     return (
         <div>

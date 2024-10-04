@@ -24,8 +24,8 @@ const NavList = ({ title, SvgComponent, path, children = 0, handleListID, listID
   const toggleColorsSvg = `${checkLocation ? '#FF3A54' : "#646464"}`
 
   const subLinkVariant = {
-    initial: {opacity: 0},
-    animate: {opacity: 1, transition:{ duration: 0.1, when: 'beforeChildren', staggerChildren: 0.1}}
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.1, when: 'beforeChildren', staggerChildren: 0.1 } }
   }
 
   useEffect(() => {
@@ -42,7 +42,6 @@ const NavList = ({ title, SvgComponent, path, children = 0, handleListID, listID
   useEffect(() => {
     if (location.pathname === path) {
       setCheckLocation(true)
-      console.log(location.pathname);
     } else {
       setCheckLocation(false)
     }
@@ -68,11 +67,11 @@ const NavList = ({ title, SvgComponent, path, children = 0, handleListID, listID
         </div>
         <AnimatePresence>
           {children ?
-            <motion.ul 
-            className={`${openDropdown ? 'flex' : 'hidden'} flex-col gap-2 mt-4`}
-            variants={subLinkVariant}
-            initial='initial'
-            animate={openDropdown ? 'animate' : 'initial'}
+            <motion.ul
+              className={`${openDropdown ? 'flex' : 'hidden'} flex-col gap-2 mt-4`}
+              variants={subLinkVariant}
+              initial='initial'
+              animate={openDropdown ? 'animate' : 'initial'}
             >
               {children.map((value, index) => <motion.li className='text-center' variants={subLinkVariant} key={index}>{value.title}</motion.li>)}
             </motion.ul>

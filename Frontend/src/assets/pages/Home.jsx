@@ -1,8 +1,7 @@
-import React, {useState } from 'react'
+import React from 'react'
 import { homeArrow } from '../../store/data.jsx';
 import HomeArrow from '../components/static/Navigation/HomeArrow.jsx';
 
-import { useProductStore } from '../../store/product.js'
 import DateComponent from '../components/static/Navigation/DateComponent.jsx'
 import CircleState from '../components/statistique/CircleState.jsx';
 import { MdArrowOutward } from 'react-icons/md';
@@ -11,13 +10,7 @@ import LineState from '../components/statistique/LineState.jsx';
 import { thumbnail } from '../index.jsx';
 
 const Home = ({ dateSaved }) => {
-  const [postTest, setPostTest] = useState({
-    brand: '',
-    price: '',
-    date: ''
-  })
 
-  const { products, getProduct, createProduct } = useProductStore()
 
   const TitleComponent = ({ title }) => (
     <div className='flex items-center gap-1'>
@@ -29,7 +22,7 @@ const Home = ({ dateSaved }) => {
     <main>
       <article>
         <div className='flex items-center gap-10 sm:justify-normal md:flex-col md:items-start md:gap-3'>
-          <h1 onClick={() => console.log(products)} className='text-black text-2xl font-medium md:text-4xl'>Account Area</h1>
+          <h1 className='text-black text-2xl font-medium md:text-4xl'>Account Area</h1>
           <DateComponent />
         </div>
       </article>

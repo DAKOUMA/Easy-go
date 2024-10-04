@@ -24,7 +24,6 @@ const Header = () => {
         window.addEventListener('resize', handleResize);
         if (windowWidth > 767 && openToggle === false) {
             setOpenToggle(true)
-            console.log('bob');
         }
 
         // Cleanup function to remove the event listener

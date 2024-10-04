@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { DatePicker } from "@mui/x-date-pickers/DatePicker/DatePicker"
 import dayjs from 'dayjs';
 
-const DateInput = ({ inputValue, setInputValue }) => {
+const DateInput = ({ setInputValue }) => {
     useEffect(() => {
 
     }, [])

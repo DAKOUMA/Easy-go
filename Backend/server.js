@@ -15,7 +15,7 @@ app.use(cors(
     {
         origin: ["https://easy-2y7kluxli-dakoumas-projects.vercel.app/"],
         methods: ["POST", "GET"],
-        credentials: tru
+        credentials: true
     }
 ))
 app.use(compression());
