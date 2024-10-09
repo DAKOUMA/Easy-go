@@ -7,6 +7,7 @@ This portfolio includes my professional projects, personal projects. It is desig
 In this portfolio i worked into an api to allow Fetch/Create/Delete/Update products from a MongoDb Database
 
 ## Live Demo
+**I deployed the backend in free hosting. So the Backend loads 50 seconds after your landing on the demo.**
 [Demo](https://easy-go-iota.vercel.app/)
 
 ## Getting Started
